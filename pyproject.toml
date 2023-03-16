@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "redis-experiments"
+version = "0.1.0"
+description = ""
+authors = ["Pierpaolo Pantone <24alsecondo@gmail.com>"]
+readme = "README.md"
+packages = [{include = "redis_experiments"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
