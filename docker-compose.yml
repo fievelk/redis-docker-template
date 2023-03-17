@@ -2,7 +2,7 @@ version: "3.9"
 services:
   flask_sender:
     build:
-      dockerfile: redis_experiments/sender_service/Dockerfile
+      dockerfile: docker/Dockerfile
     ports:
       - "8000:5000"
     volumes:
@@ -15,14 +15,14 @@ services:
 
   flask_receiver:
     build:
-      dockerfile: redis_experiments/receiver_service/Dockerfile
+      dockerfile: docker/Dockerfile
     ports:
       - "8001:5000"
     volumes:
       - .:/src
     environment:
       FLASK_DEBUG: "true"
-    command: flask --app redis_experiments/sender_service/app.py run
+    command: flask --app redis_experiments/receiver_service/app.py run
     depends_on:
       - redis
 
