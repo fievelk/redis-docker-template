@@ -9,6 +9,9 @@ services:
       - .:/src
     environment:
       FLASK_DEBUG: "true"
+    command: flask --app redis_experiments/sender_service/app.py run
+    depends_on:
+      - redis
 
   flask_receiver:
     build:
@@ -19,6 +22,9 @@ services:
       - .:/src
     environment:
       FLASK_DEBUG: "true"
+    command: flask --app redis_experiments/sender_service/app.py run
+    depends_on:
+      - redis
 
   redis:
     image: "redis:alpine"
