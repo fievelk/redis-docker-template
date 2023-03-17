@@ -1,6 +1,6 @@
 # Sharing data between services using Redis
 
-This small project shows how two services can communicate with each other using Redis as their intermediary. This repository can be used as a simple starting point for studying or experimenting with more advanced projects.
+This repository shows how two services can communicate with each other using Redis as their intermediary. Feel free to use it as a starting point for studying or experimenting with more advanced projects.
 
 - Sender: sends data to Redis
 - Receiver: fetches data from Redis
@@ -21,14 +21,8 @@ At this point, you should have two webservers running on two URLs:
 
 Visiting the sender URL will send some data to the Redis server and show it on the page. Visiting the receiver URL will fetch and show the data from Redis.
 
-## Poetry
+## Requirements
 
-The project uses Poetry to define its dependencies. However, it's easier to install dependencies on containers using a `requirements.txt` file. Therefore, we can create this file using Poetry:
-```sh
-poetry export -o requirements.txt
-```
-
-
-## TODO
-
-- [ ] Generate requirements.txt from Poetry directly inside the container.
+As long as you can run docker and docker compose, you don't need to worry about requirements. If you're curious, know that there are two different types of requirements:
+- Poetry requirements: define the dependencies used by the host (like `black`).
+- `requirements.txt`: defines the dependencies needed by the containers.
