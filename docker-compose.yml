@@ -6,10 +6,10 @@ services:
     ports:
       - "8000:5000"
     volumes:
-      - .:/src
+      - ./redis_experiments:/app
     environment:
       FLASK_DEBUG: "true"
-    command: flask --app redis_experiments/sender_service/app.py run
+    command: flask --app sender_service/app.py run
     depends_on:
       - redis
 
@@ -19,10 +19,10 @@ services:
     ports:
       - "8001:5000"
     volumes:
-      - .:/src
+      - ./redis_experiments:/app
     environment:
       FLASK_DEBUG: "true"
-    command: flask --app redis_experiments/receiver_service/app.py run
+    command: flask --app receiver_service/app.py run
     depends_on:
       - redis
 
