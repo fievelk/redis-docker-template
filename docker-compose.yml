@@ -28,3 +28,5 @@ services:
 
   redis:
     image: "redis:alpine"
+    ports:
+      - "6379:6379"  # Expose redis on the local host, so that we can access it more easily
